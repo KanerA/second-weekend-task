@@ -1,20 +1,24 @@
 * {
   padding: 0;
-  margin: 30px 135px;
   color: #fff;
   background-color: #1a1a1d;
 }
-/* table {
-} */
+div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
 th {
   background-color: #7f7f7f;
   padding: 0;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin-bottom: 5px;
 }
 td {
   background-color: darkcyan;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 5px;
 }
 
@@ -23,25 +27,25 @@ tr {
 }
 
 .underFifty {
-  background-color: #433b73;
+  background-color: #931404;
 }
 
 .Bclass {
-  background-color: green;
+  background-color: #cb7949;
 }
 
 .Aclass {
-  background-color: orange;
+  background-color: #ffcfa3;
 }
 
 .low {
-  background-color: pink;
+  background-color: #e3c467;
 }
 
 .high {
-  background-color: purple;
+  background-color: #af1d29;
 }
 
 .justRight {
-  background-color: turquoise;
+  background-color: #1f7442;
 }

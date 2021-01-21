@@ -1,73 +1,73 @@
 const tasks = [
     {
         startedAt: new Date("2021-01-19:12:45"),
-        finishedAt: new Date("2021-01-20:13:00"),
+        finishedAt: new Date("2021-01-20:19:45"),
         tasksGiven: 20,
         tasksFinished: 10,
-        topic: "html"
+        topic: "HTML"
     },
     {
         startedAt: new Date("2021-01-20:09:30"),
         finishedAt: new Date("2021-01-20:11:15"),
         tasksGiven: 30,
         tasksFinished: 10,
-        topic: "html"
+        topic: "JavaScript"
     },
     {
         startedAt: new Date("2021-01-20:12:15"),
         finishedAt: new Date("2021-01-20:15:00"),
         tasksGiven: 3,
         tasksFinished: 2,
-        topic: "html"
+        topic: "Arrays"
     },
     {
         startedAt: new Date("2021-01-20:11:30"),
-        finishedAt: new Date("2021-01-20:16:00"),
+        finishedAt: new Date("2021-01-20:14:30"),
         tasksGiven: 5,
         tasksFinished: 1,
-        topic: "html"
+        topic: "Conditions"
     },
     {
         startedAt: new Date("2021-01-20:08:30"),
         finishedAt: new Date("2021-01-20:15:15"),
         tasksGiven: 2,
         tasksFinished: 2,
-        topic: "html"
+        topic: "Loops"
     },
     {
         startedAt: new Date("2021-01-20:09:00"),
         finishedAt: new Date("2021-01-20:14:00"),
         tasksGiven: 12,
         tasksFinished: 5,
-        topic: "html"
+        topic: "GitHub"
     },
     {
         startedAt: new Date("2021-01-20:12:00"),
         finishedAt: new Date("2021-01-20:13:30"),
-        tasksGiven: 12,
+        tasksGiven: 16,
         tasksFinished: 10,
-        topic: "html"
+        topic: "CSS"
     },
     {
         startedAt: new Date("2021-01-20:10:00"),
         finishedAt: new Date("2021-01-20:11:00"),
         tasksGiven: 4,
         tasksFinished: 3,
-        topic: "html"
+        topic: "DOM Manipulations"
     },
     {
         startedAt: new Date("2021-01-20:09:30"),
         finishedAt: new Date("2021-01-20:12:00"),
         tasksGiven: 1,
         tasksFinished: 0,
-        topic: "html"
+        topic: "JSON"
     },
     {
         startedAt: new Date("2021-01-20:13:00"),
         finishedAt: new Date("2021-01-20:18:00"),
         tasksGiven: 6,
         tasksFinished: 4,
-        topic: "html"
+        topic: "Functions"
     }
 ]
 
@@ -78,16 +78,18 @@ const tasks = [
 // console.log((finishedAt- startedAt)/3600000)
 
 let start=0, end=0;
+
+document.write('<div>');
 document.write('<table style="width:80%">');
 document.write(`<tr> <th>Topic</th> <th>start</th> <th>finished</th> <th>time on</th> <th>tasks given</th> <th>tasks finished</th> <th>Done %</th></tr>`)
 for(task of tasks){
     const padZeroStart=padZero((task.startedAt.getMinutes()/60));
     const padZeroEnd=padZero((task.finishedAt.getMinutes()/60));
-    //-----------//
+    //------------ find the time spent on each task --------------------//
     start = task.startedAt.getHours()+ (task.startedAt.getMinutes()/60);
     end = task.finishedAt.getHours()+ (task.finishedAt.getMinutes()/60);
     task.timeTotal= end - start;
-    console.log(typeof(task.timeTotal));
+    //------------ set the hours of start & finish ---------------------//
     let startTime="", endTime="";
     startTime= task.startedAt.getHours()+":"+ task.startedAt.getMinutes();
     endTime= task.finishedAt.getHours()+":"+ task.finishedAt.getMinutes();
@@ -106,6 +108,7 @@ for(task of tasks){
 }
 
 document.write('</table>');
+document.write('</div>');
 //----//
 function findPercentage(num){
     if(num>=75){
