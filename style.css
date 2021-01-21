@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 30px 135px;
+  color: #fff;
+  background-color: #1a1a1d;
+}
+/* table {
+} */
+th {
+  background-color: #7f7f7f;
+  padding: 0;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+td {
+  background-color: darkcyan;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+tr {
+  text-align: center;
+}
+
+.underFifty {
+  background-color: #433b73;
+}
+
+.Bclass {
+  background-color: green;
+}
+
+.Aclass {
+  background-color: orange;
+}
+
+.low {
+  background-color: pink;
+}
+
+.high {
+  background-color: purple;
+}
+
+.justRight {
+  background-color: turquoise;
+}
