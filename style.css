@@ -10,15 +10,16 @@ div {
   justify-content: center;
   margin-top: 25px;
 }
+
 th {
   background-color: #7f7f7f;
   padding: 0;
-  /* border-radius: 10px; */
-  margin-bottom: 5px;
+  border-radius: 10px;
+  padding: 5px;
 }
 td {
   background-color: darkcyan;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   padding: 5px;
 }
 
@@ -48,4 +49,9 @@ tr {
 
 .justRight {
   background-color: #1f7442;
+}
+
+.doneBtn {
+  background-color: green;
+  border-radius: 50%;
 }

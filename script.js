@@ -16,8 +16,8 @@ const tasks = [
     {
         startedAt: new Date("2021-01-20:12:15"),
         finishedAt: new Date("2021-01-20:15:00"),
-        tasksGiven: 3,
-        tasksFinished: 2,
+        tasksGiven: 13,
+        tasksFinished: 8,
         topic: "Arrays"
     },
     {
@@ -38,7 +38,7 @@ const tasks = [
         startedAt: new Date("2021-01-20:09:00"),
         finishedAt: new Date("2021-01-20:14:00"),
         tasksGiven: 12,
-        tasksFinished: 5,
+        tasksFinished: 7,
         topic: "GitHub"
     },
     {
@@ -59,7 +59,7 @@ const tasks = [
         startedAt: new Date("2021-01-20:09:30"),
         finishedAt: new Date("2021-01-20:12:00"),
         tasksGiven: 1,
-        tasksFinished: 0,
+        tasksFinished: 1,
         topic: "JSON"
     },
     {
@@ -71,45 +71,37 @@ const tasks = [
     }
 ]
 
-
-
-// const startedAt= new Date("2021-01-20:10:00");
-// const finishedAt= new Date("2021-01-20:11:00");
-// console.log((finishedAt- startedAt)/3600000)
-
-let start=0, end=0;
-
-document.write('<div>');
-document.write('<table style="width:80%">');
+document.write('<div><table style="width:80%">');
 document.write(`<tr> <th>Topic</th> <th>start</th> <th>finished</th> <th>time on</th> <th>tasks given</th> <th>tasks finished</th> <th>Done %</th></tr>`)
 for(task of tasks){
     const padZeroStart=padZero((task.startedAt.getMinutes()/60));
     const padZeroEnd=padZero((task.finishedAt.getMinutes()/60));
     //------------ find the time spent on each task --------------------//
-    start = task.startedAt.getHours()+ (task.startedAt.getMinutes()/60);
-    end = task.finishedAt.getHours()+ (task.finishedAt.getMinutes()/60);
+    let start = task.startedAt.getHours()+ (task.startedAt.getMinutes()/60);
+    let end = task.finishedAt.getHours()+ (task.finishedAt.getMinutes()/60);
     task.timeTotal= end - start;
     //------------ set the hours of start & finish ---------------------//
     let startTime="", endTime="";
     startTime= task.startedAt.getHours()+":"+ task.startedAt.getMinutes();
     endTime= task.finishedAt.getHours()+":"+ task.finishedAt.getMinutes();
-    // let donePercent= Math.floor((task.tasksFinished/task.tasksGiven)*100)
-    task.done= Math.floor((task.tasksFinished/task.tasksGiven)*100)+ "%";
+    //------------ finding the percentage of tasks finished ------------//
     donePercentage= Math.floor((task.tasksFinished/task.tasksGiven)*100);
-
+    task.tasksFinishedPercentage= donePercentage+ "%";
+    //------------ creating the table contents -------------------------//
     document.write(`<tr><td>${task.topic}</td>
     <td>${startTime}${padZeroStart}</td>
     <td>${endTime}${padZeroEnd}</td>
     <td class=${checkTimeOnTask(task.timeTotal)}>${task.timeTotal}</td>
     <td>${task.tasksGiven}</td>
     <td>${task.tasksFinished}</td>
-    <td class=${findPercentage(donePercentage)}>${task.done}</td></tr>`);
-
+    <td class=${findPercentage(donePercentage)}>${task.tasksFinishedPercentage}</td>
+    </tr>`);
 }
 
-document.write('</table>');
-document.write('</div>');
-//----//
+document.write('</table></div>');//closing the table
+
+//-------- functions -----------//
+//-------- changing background by percentage ---------------------------//
 function findPercentage(num){
     if(num>=75){
         return "Aclass";
@@ -121,14 +113,14 @@ function findPercentage(num){
         return "Bclass";
     }
 }
-
+//-------- padding zero to the minutes if tey are zero (i.e. 14:*00*)---//
 function padZero(num){
     if(num===0){
         return "0";
     }
     return "";
 }
-
+//-------- changing background color based on hours on task ------------//
 function checkTimeOnTask(num){
     console.log(num);
     if(num<2.5){
@@ -141,7 +133,3 @@ function checkTimeOnTask(num){
         return "high";
     }
 }
-
-
-// ${padZero((task.finishedAt.getMinutes()/60))}
-// ${padZero((task.startedAt.getMinutes()/60))}
