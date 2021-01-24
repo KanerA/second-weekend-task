@@ -1,14 +1,26 @@
 * {
   padding: 0;
   color: #fff;
-  background-color: #1a1a1d;
+  background-color: #1a1a1a;
 }
+
+/* body {
+  animation: fluid 6s infinite;
+  z-index: -1;
+} */
+
 div {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   margin-top: 25px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bolder;
+  color: darkcyan;
 }
 
 th {
@@ -55,3 +67,15 @@ tr {
   background-color: green;
   border-radius: 50%;
 }
+
+/* @keyframes fluid {
+  0% {
+    background-color: #000;
+  }
+  50% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #000;
+  }
+} */

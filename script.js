@@ -71,6 +71,8 @@ const tasks = [
     }
 ]
 
+document.write('<h1>Tasks To-Do:</h1>');
+
 document.write('<div><table style="width:80%">');
 document.write(`<tr> <th>Topic</th> <th>start</th> <th>finished</th> <th>time on</th> <th>tasks given</th> <th>tasks finished</th> <th>Done %</th></tr>`)
 for(task of tasks){
@@ -98,7 +100,7 @@ for(task of tasks){
     </tr>`);
 }
 
-document.write('</table></div>');//closing the table
+document.write('</table></י>');//closing the table
 
 //-------- functions -----------//
 //-------- changing background by percentage ---------------------------//
